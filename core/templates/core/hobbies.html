@@ -1,0 +1,14 @@
+{% extends 'core/base.html' %}
+{% load staticfiles %}
+
+{% block container_app %}
+{% if hobbies %}
+<ul>
+    {% for hobby in hobbies %}
+    <li style="color: {{ hobby.color }};">{{ hobby.title }}</li>
+    {% endfor %}
+</ul>
+{% else %}
+<h3>Hm, parece que você não tem hobbies... :|</h3>
+{% endif %}
+{% endblock %}
