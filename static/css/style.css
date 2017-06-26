@@ -4,7 +4,15 @@
 
 #container-app {
     font-size: 1.5em;
-    color: #777;
+    color: #625f5e;
+}
+
+#container-app span, #container-app ul {
+    color: #60b041;
+}
+
+.disabled-li {
+    color: #f2f2f2;
 }
 
 .error-msg {

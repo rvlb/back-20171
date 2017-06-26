@@ -2,5 +2,11 @@
 {% load staticfiles %}
 
 {% block container_app %}
-Olá! Bem-vindo(a) à página que {{ name }} fez!
+<p>Olá! Bem-vindo(a) à página que <span>{{ name }}</span> fez!</p>
+<p>O que veremos hoje?</p>
+<ul>
+    {% for c in content %}
+    <li {% if not c.status %}class="disabled-li"{% endif %}>{{ c.title }}</li>
+    {% endfor %}
+</ul>
 {% endblock %}
