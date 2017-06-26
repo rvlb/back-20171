@@ -2,7 +2,9 @@ from django.shortcuts import render
 from django.views.generic import FormView
 
 from django.core.urlresolvers import reverse_lazy
-from django.core.mail import EmailMessage
+from django.core.mail import send_mail
+
+from django.conf import settings
 
 from .forms import ContactForm
 
@@ -14,18 +16,11 @@ class ContactFormView(FormView, NavbarMixin):
     form_class = ContactForm
     template_name = 'contact/contact.html'
     success_url = reverse_lazy('core:index')
-    
+
     def form_valid(self, form):
         name = form.cleaned_data['name']
         email = form.cleaned_data['email']
         subject = form.cleaned_data['subject']
         body = form.cleaned_data['message']
-
-        message = EmailMessage(
-            subject,
-            body,
-            to=[email],
-        )
-        message.send()
-
+        send_mail(subject, body, email, [settings.EMAIL_HOST], fail_silently=False)
         return super(ContactFormView, self).form_valid(form)
