@@ -9,8 +9,8 @@ class NavbarMixin(FormMixin, ContextMixin):
     def get_context_data(self, **kwargs):
         context = super(NavbarMixin, self).get_context_data(**kwargs)
         context['nav_items'] = [
-            { 'title': 'Início', 'url': 'core:index' },
-            { 'title': 'Hobbies', 'url': 'core:hobbies' },
-            { 'title': 'Contato', 'url': 'contact:email' },
+            { 'title': 'Início', 'url': 'core:index', 'id': 'link-index' },
+            { 'title': 'Hobbies', 'url': 'core:hobbies', 'id': 'link-hobbies' },
+            { 'title': 'Contato', 'url': 'contact:email', 'id': 'link-contact' },
         ]
         return context

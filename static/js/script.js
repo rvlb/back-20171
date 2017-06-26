@@ -1,4 +1,12 @@
 $(document).ready(function() {
+
+    $('#link-contact').click(function(e) {
+        if($('#login-btn').is(':visible')) {
+            e.preventDefault();
+            $('#auth-modal').modal('show');
+        }
+    });
+
     $('#login-btn').click(function(e) {
         e.preventDefault();
         $('#auth-modal').modal('show');

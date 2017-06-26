@@ -14,7 +14,7 @@ class ContactFormView(FormView, NavbarMixin):
     form_class = ContactForm
     template_name = 'contact/contact.html'
     success_url = reverse_lazy('core:index')
-
+    
     def form_valid(self, form):
         name = form.cleaned_data['name']
         email = form.cleaned_data['email']
@@ -27,5 +27,5 @@ class ContactFormView(FormView, NavbarMixin):
             to=[email],
         )
         message.send()
-        
+
         return super(ContactFormView, self).form_valid(form)
