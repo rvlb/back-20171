@@ -32,6 +32,3 @@ class HobbiesView(ListView, NavbarMixin):
     template_name = 'core/hobbies.html'
     model = Hobby
     context_object_name = 'hobbies'
-
-class ContactView(TemplateView, NavbarMixin):
-    template_name = 'core/contact.html'

@@ -1,0 +1,19 @@
+{% extends 'core/base.html' %}
+{% load staticfiles %}
+{% load widget_tweaks %}
+
+{% block container_app %}
+<form class="col-xs-12 col-md-offset-2 col-md-8" method="POST">
+    {% csrf_token %}
+    <fieldset>
+        {% for field in form %}
+        <div class="form-group {% if field.errors %}has-error{% endif %}">
+            {% render_field field class+='form-control' placeholder=field.label %}
+        </div>
+        {% endfor %}
+        <div class="form-group">
+            <button type="submit" class="btn btn-success btn-block">Enviar</button>
+        </div>
+    </fieldset>
+</form>
+{% endblock %}

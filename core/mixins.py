@@ -11,6 +11,6 @@ class NavbarMixin(FormMixin, ContextMixin):
         context['nav_items'] = [
             { 'title': 'Início', 'url': 'core:index' },
             { 'title': 'Hobbies', 'url': 'core:hobbies' },
-            { 'title': 'Contato', 'url': 'core:contact' },
+            { 'title': 'Contato', 'url': 'contact:email' },
         ]
         return context
