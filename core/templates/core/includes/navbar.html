@@ -16,9 +16,9 @@
                 {% endfor %}
                 <li>
                     {% if user.is_authenticated %}
-                    <a href="#">Olá, {{ user.name }}! Clique para deslogar</a>
+                    <a href="#" id="logout-btn">Olá, {{ user.username }}! Clique para deslogar</a>
                     {% else %}
-                    <a href="#">Clique para logar</a>
+                    <a href="#" id="login-btn">Clique para logar</a>
                     {% endif %}
                 </li>
             </ul>
